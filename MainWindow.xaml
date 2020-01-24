@@ -1,0 +1,71 @@
+﻿<Window x:Class="ICE3StarterCode.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ICE3StarterCode"
+        mc:Ignorable="d"
+        Title="Network Calculator" Height="372" Width="800">
+    <Grid>
+        <TabControl SelectedIndex="1">
+            <TabItem Header="Linear/dB Conversion">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="txtInstructionsDB" HorizontalAlignment="Left" Margin="19,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" Width="236">
+                        <TextBlock.Text>
+                            This panel supports converting from linear to dB units or dB units to linear.
+                        </TextBlock.Text>
+
+                    </TextBlock>
+                    <RadioButton x:Name="rdoLinear" Content="Linear Units" Grid.Column="1" HorizontalAlignment="Left" Margin="41,49,0,0" VerticalAlignment="Top" FontWeight="Normal" FontSize="16"/>
+                    <Label x:Name="lblConvert" Content="Convert to:" Grid.Column="1" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                    <RadioButton x:Name="rdoDB" Content="dB Units" Grid.Column="1" HorizontalAlignment="Left" Margin="41,75,0,0" VerticalAlignment="Top" FontSize="16"/>
+                    <TextBox x:Name="txtConvert" Grid.Column="1" HorizontalAlignment="Left" Margin="61,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" FontSize="16" Height="33"/>
+                    <Button x:Name="btnConvert" Content="Convert" Grid.Column="1" HorizontalAlignment="Left" Margin="61,171,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Height="52" Width="126" Click="btnConvert_Click"/>
+
+                    <Border BorderThickness="1" BorderBrush="Black" Grid.Column="2" Margin="25,111,28,126">
+                        <TextBlock x:Name="txtConvertOutput" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="34" Width="212" FontSize="20" TextAlignment="Center" FontWeight="Bold"/>
+                    </Border>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Compute Noise">
+                <Grid x:Name="lblTemperatureUnit" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="txtInstructionsNoise" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="Bold" FontSize="24" Width="255" Grid.ColumnSpan="2">
+                        <TextBlock.Text>
+                            This panel supports calculating the noise in dB at a receiver.
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <ComboBox x:Name="cboTemperatureUnit" Grid.Column="1" HorizontalAlignment="Left" Margin="14,52,0,0" VerticalAlignment="Top" Width="240">
+                        <ComboBoxItem Content="Kelvin"/>
+                        <ComboBoxItem Content="Celsius"/>
+                        <ComboBoxItem Content="Fahrenheit"/>
+                    </ComboBox>
+                    <Label x:Name="lblChooseTempUnit" Content="Choose Temperature Unit" Grid.Column="1" HorizontalAlignment="Left" Margin="14,22,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                    <Label x:Name="lblTemperature" Content="Temperature" Grid.Column="1" HorizontalAlignment="Left" Margin="14,79,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                    <TextBox x:Name="txtTemperature" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="223" Height="33" Margin="0,110,0,0"/>
+                    <Label x:Name="lblBandwidth" Content="Bandwidth (MHz)" Grid.Column="1" HorizontalAlignment="Left" Margin="17,150,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+                    <TextBox x:Name="txtBandwidth" Grid.Column="1" HorizontalAlignment="Center" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="223" Height="33"/>
+                    <Button x:Name="btnComputeNoise" Grid.Column="1" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Height="67" Width="222" Click="btnComputeNoise_Click">
+
+                        <Button.Content>Compute Noise</Button.Content>
+                    </Button>
+                    <Border BorderThickness="1" BorderBrush="Black" Grid.Column="3" Margin="25,111,28,126">
+                        <TextBlock x:Name="txtNoiseOutput" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontWeight="Bold" FontSize="20" Width="212"/>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Grid/>
+
+    </Grid>
+</Window>

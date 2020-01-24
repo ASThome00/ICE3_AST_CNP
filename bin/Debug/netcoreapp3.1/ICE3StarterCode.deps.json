@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ICE3StarterCode/1.0.0": {
+        "runtime": {
+          "ICE3StarterCode.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ICE3StarterCode/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
